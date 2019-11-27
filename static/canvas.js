@@ -1,3 +1,25 @@
+$(document).ready(function(e) {
+  
+  // Add a click handler to the submit button.
+  $("#submitButton").click(function(e) {
+    
+    // Prevent the form actually submitting.
+    e.preventDefault();
+    canvas = document.getElementById('myCanvas');
+    console.log(canvas.toDataURL());
+    
+    // Send AJAX request for new numbers.
+    $.post("/uploadimage", {"theimage": canvas.toDataURL()}, function(data){
+      
+      // Update the text area with the numbers.
+      $("#randomNumbers").text(data.message);
+    
+    });
+  
+  });
+
+});
+
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
  

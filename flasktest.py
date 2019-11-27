@@ -11,3 +11,12 @@ app = fl.Flask(__name__)
 @app.route('/')
 def home():
   return app.send_static_file('canvashtml.html')
+  
+
+# Add a route for generating random numbers using POST data.
+@app.route('/uploadimage', methods=['GET', 'POST'])
+def uploadimage():
+  # Find out how many numbers the user asked to generate.
+  theimage = fl.request.values.get("theimage", "")
+  print(theimage)
+  return {"message": theimage}

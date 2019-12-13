@@ -2,7 +2,7 @@
 <html>
   <head>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <title>Title</title>    
+      <title>AI Project</title>    
   </head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,19 +11,19 @@
       <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h1>Header</h1>
+              <h1>Number Predictor</h1>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <h5>Header 2</h5>
+              <h5>Draw a number on the canvas and a neural network will try to guess the number using MNIST Dataset</h5>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
               <form>
                 <div class="form-group">
-                  <button type="submit" id="submitButton" class="btn btn-primary">Button</button>
+                  <button type="submit" id="submitButton" class="btn btn-primary">Generate</button>
                 </div>
                 <div class="form-group">
                   <textarea class="form-control" id="randomNumbers" rows="8" placeholder="Click generate to generate image data." readonly></textarea>
@@ -31,8 +31,8 @@
               </form>
             </div>
           </div>
-          <div id="paint">
-              <canvas id="myCanvas"></canvas>
+          <div id="paint" >
+              <canvas id="myCanvas" style="border:2px solid black;"></canvas>
           </div>
         </div>
   	

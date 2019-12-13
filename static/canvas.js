@@ -8,10 +8,10 @@ $(document).ready(function(e) {
     canvas = document.getElementById('myCanvas');
     console.log(canvas.toDataURL());
     
-    // Send AJAX request for new numbers.
-    $.post("/uploadimage", {"theimage": canvas.toDataURL()}, function(data){
+    // Send AJAX request to generate image to base64
+    $.post("/predict", {"theimage": canvas.toDataURL()}, function(data){
       
-      // Update the text area with the numbers.
+      // Update the text area with base64.
       $("#randomNumbers").text(data.message);
     
     });
@@ -19,14 +19,14 @@ $(document).ready(function(e) {
   });
 
 });
-
+//code adapted from https://www.html5canvastutorials.com/labs/html5-canvas-paint-application/
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
  
 var painting = document.getElementById('paint');
 var paint_style = getComputedStyle(painting);
-canvas.width = parseInt(paint_style.getPropertyValue('width'));
-canvas.height = parseInt(paint_style.getPropertyValue('height'));
+canvas.width = parseInt(255);
+canvas.height = parseInt(255);
 
 var mouse = {x: 0, y: 0};
  
@@ -35,10 +35,10 @@ canvas.addEventListener('mousemove', function(e) {
   mouse.y = e.pageY - this.offsetTop;
 }, false);
 
-ctx.lineWidth = 3;
+ctx.lineWidth = 10;
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
-ctx.strokeStyle = '#00CC99';
+ctx.strokeStyle = '##000000';
  
 canvas.addEventListener('mousedown', function(e) {
     ctx.beginPath();

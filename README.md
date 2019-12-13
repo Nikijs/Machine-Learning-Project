@@ -12,5 +12,7 @@ MNIST Dataset (http://yann.lecun.com/exdb/mnist/)
 ---
 ### Commands to run
 >conda install opencv
+
 >python read.py
+
 >env FLASK_APP=flasktest.py flask run
